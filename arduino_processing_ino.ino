@@ -15,8 +15,8 @@ int melodiaJuju[]={
   };
 
   
-  uint16_t volume = 1023;
-  uint16_t frequency = 3000;
+  uint16_t volume = 20;
+  uint16_t frequency = 4186;
   
   void setup() {
     Serial.begin(9600);
@@ -33,8 +33,10 @@ int melodiaJuju[]={
         freq-= 1; 
         //Serial.print(ultrasonic.distanceRead());
      }*/ 
-         vol.tone(speakerPin, (frequency / (ultrasonic.distanceRead()+1)), volume);
+         vol.tone(speakerPin, frequency = constrain((30*(ultrasonic.distanceRead())),0, 4186), constrain((255 *(ultrasonic.distanceRead())), 0, 255));
+         Serial.print( constrain((20 *(ultrasonic.distanceRead())), 0, 255));
     //}
-   delay(10);  
+   delay(1 0);
+   
 }
 
